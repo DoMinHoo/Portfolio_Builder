@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "verbatimModuleSyntax": false
+  },
+  "include": [
+    "src",
+    "../portfolio-builder/server/src/controller",
+    "../portfolio-builder/server/src/middleware",
+    "../portfolio-builder/server/src/model",
+    "../portfolio-builder/server/src/routes",
+    "../portfolio-builder/server/src/server.ts",
+    "../portfolio-builder/server/src/config"
+  ]
+}

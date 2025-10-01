@@ -8,8 +8,20 @@ import DashBoardLayout from "../layouts/DashBoardLayout";
 import DashBoardHome from "../layouts/DashBoardHome";
 import DashBoardProject from "../layouts/DashBoardProject";
 
+import LoginPage from "../pages/Auth/LoginPage";
+import RegisterPage from "../pages/Auth/RegisterPage";
+
+import Profile from "../pages/Profile";
+
 
 const router = createBrowserRouter([
+    {
+        path: "auth",
+        children: [
+            { index: true, element: <LoginPage /> },
+            { path: "register", element: <RegisterPage /> }
+        ]
+    },
     {
         path: "/",
         element: <MainLayout />,
@@ -18,6 +30,7 @@ const router = createBrowserRouter([
             { path: "about", element: <About /> },
             { path: "portfolio", element: <Portfolio /> },
             { path: "contact", element: <Contact /> },
+            { path: "profile", element: <Profile /> }
         ]
     },
     {

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 const LoginPage = () => {
-    const { login, error, setError } = useAuth();
+    const { login, error, setError, success, setSuccess } = useAuth();
     const navigate = useNavigate();
     const onFinish = (value: any) => {
         login(value.email, value.password);
@@ -21,6 +21,14 @@ const LoginPage = () => {
                     <Form.Item name="password" rules={[{ required: true }]}>
                         <Input type='password' placeholder='Password' className='h-10' />
                     </Form.Item>
+                    {success && (
+                        <Alert
+                            message={success}
+                            type="success"
+                            showIcon
+                            closable
+                            onClose={() => setSuccess(null)} />
+                    )}
                     {error && (
                         <Alert
                             message={error}

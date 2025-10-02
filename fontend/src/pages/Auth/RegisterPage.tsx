@@ -6,7 +6,7 @@ import { registerAPI } from '../../services/auth.service'
 type Props = {}
 
 const RegisterPage = (props: Props) => {
-    const { register, error, setError } = useAuth();
+    const { register, error, setError, success, setSuccess } = useAuth();
     const onFinish = (value: any) => {
         register(value.name, value.email, value.password);
     }
@@ -24,6 +24,14 @@ const RegisterPage = (props: Props) => {
                     <Form.Item name="password" rules={[{ required: true }]}>
                         <Input type='password' placeholder='Password' className='h-10' />
                     </Form.Item>
+                    {success && (
+                        <Alert
+                            message={success}
+                            type="success"
+                            showIcon
+                            closable
+                            onClose={() => setSuccess(null)} />
+                    )}
                     {error && (
                         <Alert
                             message={error}

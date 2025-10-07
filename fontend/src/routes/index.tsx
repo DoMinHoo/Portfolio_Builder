@@ -4,6 +4,9 @@ import ProtectedRouter from "./ProtectedRouter";
 // Layouts
 import MainLayout from "../layouts/MainLayout";
 import DashBoardLayout from "../layouts/DashBoardLayout";
+import DashBoardHome from "../pages/Dasboard/DashBoardHome";
+import DashBoardProject from "../pages/Dasboard/DashBoardProject";
+import PortfolioBuilder from "../pages/Dasboard/PortfolioBuilder";
 
 // Pages
 import Home from "../pages/Home";
@@ -59,9 +62,10 @@ const router = createBrowserRouter([
             </ProtectedRouter>
         ),
         children: [
-            { index: true, element: <Home /> },
-            { path: "projects", element: <Profile /> },
+            { index: true, element: <DashBoardHome /> },
+            { path: "projects", element: <DashBoardLayout /> },
             { path: "settings", element: <div>Settings (placeholder)</div> },
+            { path: "builder", element: <PortfolioBuilder /> }
         ],
     },
 

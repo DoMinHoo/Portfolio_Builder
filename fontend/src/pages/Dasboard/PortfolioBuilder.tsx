@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Input, Button } from 'antd'
-
+import { createOrUpdate } from '../../services/portfolio.service';
+import { toast } from "react-toastify";
 
 type PortfolioData = {
     fullName: string,
@@ -22,9 +23,15 @@ const PortfolioBuilder = () => {
         setPortfolioData(allValue);
     }
 
-    const handleSave = () => {
-        console.log("Portfolio data:", portfolioData);
-        localStorage.setItem("portfolio-draft", JSON.stringify(portfolioData));
+    const handleSave = async () => {
+        try {
+            const res = await createOrUpdate(portfolioData);
+            toast.success("Portfolio saved successfully!");
+            console.log(res);
+        } catch (error: any) {
+            toast.error("Failed to save portfolio!");
+            console.log(error.message);
+        }
     }
     return (
         <div className='grid grid-cols-2 gap-6 p-6'>

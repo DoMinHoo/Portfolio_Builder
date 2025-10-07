@@ -4,8 +4,11 @@ import helmet from 'helmet';
 import morgan from "morgan";
 import cors from 'cors';
 import connectDB from './config/db.js';
+
+
 import authRoutes from './routes/auth.routes.js';
 import profileRoutes from './routes/profile.routes.js';
+import portfolioRoutes from './routes/portfolio.routes.js'
 
 dotenv.config();
 
@@ -22,6 +25,7 @@ app.get('/', (req, res) => {
 });
 app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes)
+app.use("/api/portfolio", portfolioRoutes)
 
 // 🧠 Đảm bảo connect DB xong mới listen
 const startServer = async () => {

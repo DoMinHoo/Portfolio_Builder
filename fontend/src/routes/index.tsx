@@ -7,6 +7,7 @@ import DashBoardLayout from "../layouts/DashBoardLayout";
 import DashBoardHome from "../pages/Dasboard/DashBoardHome";
 import DashBoardProject from "../pages/Dasboard/DashBoardProject";
 import PortfolioBuilder from "../pages/Dasboard/PortfolioBuilder";
+import MyPortfolio from "../pages/Dasboard/MyPortfolio";
 
 // Pages
 import Home from "../pages/Home";
@@ -20,6 +21,7 @@ import Profile from "../pages/Profile";
 // Auth Pages
 import LoginPage from "../pages/Auth/LoginPage";
 import RegisterPage from "../pages/Auth/RegisterPage";
+
 
 const router = createBrowserRouter([
     // Auth routes
@@ -65,7 +67,8 @@ const router = createBrowserRouter([
             { index: true, element: <DashBoardHome /> },
             { path: "projects", element: <DashBoardLayout /> },
             { path: "settings", element: <div>Settings (placeholder)</div> },
-            { path: "builder", element: <PortfolioBuilder /> }
+            { path: "builder", element: <PortfolioBuilder /> },
+            { path: "my-portfolio", element: <MyPortfolio /> }
         ],
     },
 
